@@ -9,7 +9,7 @@
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "lint": "eslint --ext .js .",
+    "lint": "eslint --ext .js --ext .jsx .",
     "precommit": "npm run lint",
     "semantic-release": "semantic-release",
     "test": "jest --coverage"
