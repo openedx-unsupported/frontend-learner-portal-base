@@ -35,10 +35,10 @@ class BaseCourseCard extends Component {
         type: 'button',
         onClick: this.handleEmailSettingsButtonClick,
         children: (
-          <>
+          <div role="menuitem">
             Email settings
             <span className="sr-only">for {title}</span>
-          </>
+          </div>
         ),
       });
     }
@@ -145,12 +145,16 @@ class BaseCourseCard extends Component {
   };
 
   renderSettingsDropdown = (menuItems) => {
+    const { title } = this.props;
     if (menuItems && menuItems.length > 0) {
       return (
         <div className="ml-auto">
           <Dropdown>
             <Dropdown.Button className="btn-outline-secondary">
               <FontAwesomeIcon icon={faCog} />
+              <span className="sr-only">
+                course settings for {title}
+              </span>
             </Dropdown.Button>
             <Dropdown.Menu>
               {menuItems.map(menuItem => (
@@ -158,6 +162,7 @@ class BaseCourseCard extends Component {
                   key={menuItem.key}
                   type={menuItem.type}
                   onClick={menuItem.onClick}
+                  role="menuitem"
                 >
                   {menuItem.children}
                 </Dropdown.Item>
@@ -249,7 +254,7 @@ class BaseCourseCard extends Component {
         <small className="mb-0">
           View your certificate on
           {' '}
-          <a href={`${process.env.LMS_BASE_URL}/u/${username}`}>your profile →</a>
+          <a className="text-underline" href={`${process.env.LMS_BASE_URL}/u/${username}`}>your profile →</a>
         </small>
       );
     }

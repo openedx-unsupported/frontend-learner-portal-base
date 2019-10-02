@@ -89,6 +89,7 @@ const MarkCompleteModal = ({
         ]}
         open={isOpen && !confirmSuccessful}
         onClose={handleModalOnClose}
+        closeText="Cancel"
       />
     </MarkCompleteModalContext.Provider>
   );

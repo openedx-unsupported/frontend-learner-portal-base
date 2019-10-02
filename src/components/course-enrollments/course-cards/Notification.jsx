@@ -9,6 +9,7 @@ const Notification = props => (
       <div className="row no-gutters">
         <div className="col-12">
           <a
+            className="text-underline"
             href={props.url}
             onClick={() => { sendTrackEvent('edx.learner_portal.notification.clicked', { course_run_id: props.courseRunId, name: props.name }); }}
           >

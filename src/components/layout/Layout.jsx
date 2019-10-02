@@ -32,7 +32,9 @@ class Layout extends Component {
     return (
       <IntlProvider locale="en">
         <>
-          <Helmet titleTemplate="%s - edX" defaultTitle="edX" />
+          <Helmet titleTemplate="%s - edX" defaultTitle="edX">
+            <html lang="en" />
+          </Helmet>
           <SiteHeader
             logo={headerLogo || EdXLogo}
             logoDestination={siteUrl}
