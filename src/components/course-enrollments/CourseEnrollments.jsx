@@ -127,9 +127,9 @@ export class CourseEnrollments extends Component {
         />
         <MediaQuery minWidth={breakpoints.large.minWidth}>
           {matches => !matches && (
-            <aside className="mb-5">
+            <div className="mb-5">
               {sidebarComponent}
-            </aside>
+            </div>
           )}
         </MediaQuery>
         <CourseSection

@@ -105,7 +105,7 @@ class EmailSettingsModal extends Component {
     const {
       error, hasEmailsEnabled, isSubmitting,
     } = this.state;
-    const { title, open } = this.props;
+    const { title, open, courseRunId } = this.props;
 
     return (
       <Modal
@@ -132,12 +132,12 @@ class EmailSettingsModal extends Component {
             <div className="form-check">
               <Input
                 type="checkbox"
-                id="email-settings"
+                id={`email-settings-${courseRunId}`}
                 checked={hasEmailsEnabled}
                 disabled={isSubmitting}
                 onChange={this.handleEmailSettingsChange}
               />
-              <label className="form-check-label ml-2 font-weight-normal" htmlFor="email-settings">
+              <label className="form-check-label ml-2 font-weight-normal" htmlFor={`email-settings-${courseRunId}`}>
                 Receive course emails such as reminders, schedule updates, and
                 other critical announcements.
               </label>

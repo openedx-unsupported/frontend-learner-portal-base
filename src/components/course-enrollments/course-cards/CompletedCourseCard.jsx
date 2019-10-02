@@ -17,7 +17,7 @@ const CompletedCourseCard = props => (
           <p className="mb-0 lead">
             View your certificate on
             {' '}
-            <a href={`${process.env.LMS_BASE_URL}/u/${props.username}`}>your profile →</a>
+            <a className="text-underline" href={`${process.env.LMS_BASE_URL}/u/${props.username}`}>your profile →</a>
           </p>
         </div>
       </div>
@@ -25,7 +25,7 @@ const CompletedCourseCard = props => (
       <p className="lead mb-3">
         To earn a certificate,
         {' '}
-        <a href={props.linkToCourse}>retake this course →</a>
+        <a className="text-underline" href={props.linkToCourse}>retake this course →</a>
       </p>
     )}
   </BaseCourseCard>

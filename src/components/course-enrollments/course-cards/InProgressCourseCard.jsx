@@ -65,10 +65,10 @@ const InProgressCourseCard = ({
           });
         },
         children: (
-          <>
+          <div role="menuitem">
             Mark as complete
             <span className="sr-only">for {title}</span>
-          </>
+          </div>
         ),
       }];
     }
@@ -106,7 +106,6 @@ const InProgressCourseCard = ({
         <ul
           className="list-unstyled mb-0"
           aria-label="course due dates"
-          role="alert"
         >
           {filteredNotifications.map(notificationProps => (
             <Notification
