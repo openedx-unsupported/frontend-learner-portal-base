@@ -1,22 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-const SidebarBlock = props => (
-  <div className={props.className}>
-    {props.title && <h4 className="mb-2">{props.title}</h4>}
-    {props.children}
-  </div>
-);
+const SidebarBlock = ({
+  className,
+  title,
+  children,
+  titleOptions,
+}) => {
+  const { tag: TitleTag } = titleOptions;
+  return (
+    <div className={className}>
+      {title && (
+        <TitleTag className={classNames('mb-2', titleOptions.className)}>
+          {title}
+        </TitleTag>
+      )}
+      {children}
+    </div>
+  );
+};
 
 SidebarBlock.propTypes = {
-  title: PropTypes.string,
   children: PropTypes.node.isRequired,
+  title: PropTypes.string,
   className: PropTypes.string,
+  titleOptions: PropTypes.shape({
+    tag: PropTypes.string,
+    className: PropTypes.string,
+  }),
 };
 
 SidebarBlock.defaultProps = {
   title: null,
   className: undefined,
+  titleOptions: { tag: 'h4', className: undefined },
 };
 
 export default SidebarBlock;
