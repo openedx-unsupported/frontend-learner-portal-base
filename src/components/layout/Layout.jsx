@@ -5,6 +5,13 @@ import { IntlProvider } from 'react-intl';
 import SiteHeader from '@edx/frontend-component-site-header';
 import SiteFooter from '@edx/frontend-component-footer';
 import { connect } from 'react-redux';
+import {
+  faFacebookSquare,
+  faTwitterSquare,
+  faLinkedin,
+  faRedditSquare,
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { AppContext } from '../app-context';
 
@@ -62,12 +69,32 @@ class Layout extends Component {
             openSourceUrl="https://open.edx.org/"
             termsOfServiceUrl="https://www.edx.org/edx-terms-service"
             privacyPolicyUrl="https://www.edx.org/edx-privacy-policy"
-            facebookUrl="https://www.facebook.com/edX"
-            twitterUrl="https://twitter.com/edXOnline"
-            youTubeUrl="https://www.youtube.com/user/edxonline"
-            linkedInUrl="http://www.linkedin.com/company/edx"
-            googlePlusUrl="https://plus.google.com/+edXOnline"
-            redditUrl="https://www.reddit.com/r/edX/"
+            socialLinks={[
+              {
+                title: 'Facebook',
+                url: 'https://www.facebook.com/edX',
+                icon: <FontAwesomeIcon icon={faFacebookSquare} className="social-icon" size="2x" />,
+                screenReaderText: 'Like edX on Facebook',
+              },
+              {
+                title: 'Twitter',
+                url: 'https://twitter.com/edXOnline',
+                icon: <FontAwesomeIcon icon={faTwitterSquare} className="social-icon" size="2x" />,
+                screenReaderText: 'Follow edX on Twitter',
+              },
+              {
+                title: 'LinkedIn',
+                url: 'http://www.linkedin.com/company/edx',
+                icon: <FontAwesomeIcon icon={faLinkedin} className="social-icon" size="2x" />,
+                screenReaderText: 'Follow edX on LinkedIn',
+              },
+              {
+                title: 'Reddit',
+                url: 'https://www.reddit.com/r/edX/',
+                icon: <FontAwesomeIcon icon={faRedditSquare} className="social-icon" size="2x" />,
+                screenReaderText: 'Subscribe to the edX subreddit',
+              },
+            ]}
             appleAppStoreUrl="https://apps.apple.com/us/app/edx/id945480667"
             googlePlayUrl="https://play.google.com/store/apps/details?id=org.edx.mobile"
             handleAllTrackEvents={() => {}}
