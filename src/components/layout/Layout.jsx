@@ -95,8 +95,14 @@ class Layout extends Component {
                 screenReaderText: 'Subscribe to the edX subreddit',
               },
             ]}
-            appleAppStoreUrl="https://apps.apple.com/us/app/edx/id945480667"
-            googlePlayUrl="https://play.google.com/store/apps/details?id=org.edx.mobile"
+            appleAppStore={{
+              url: 'https://apps.apple.com/us/app/edx/id945480667',
+              altText: 'Download the edX mobile app from the Apple App Store',
+            }}
+            googlePlay={{
+              url: 'https://play.google.com/store/apps/details?id=org.edx.mobile',
+              altText: 'Download the edX mobile app from Google Play',
+            }}
             handleAllTrackEvents={() => {}}
           />
         </>
