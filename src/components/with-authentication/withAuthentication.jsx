@@ -25,11 +25,6 @@ const withAuthentication = (WrappedComponent) => {
         pathname: PropTypes.string.isRequired,
       }).isRequired,
       fetchUserAccount: PropTypes.func.isRequired,
-      username: PropTypes.string,
-    };
-
-    static defaultProps = {
-      username: null,
     };
 
     state = {
@@ -38,7 +33,7 @@ const withAuthentication = (WrappedComponent) => {
 
     componentDidMount() {
       const {
-        username, location, fetchUserAccount,
+        location, fetchUserAccount,
       } = this.props;
 
       if (!process.env.IDP_SLUG) {
@@ -50,7 +45,7 @@ const withAuthentication = (WrappedComponent) => {
       apiClient.ensurePublicOrAuthenticationAndCookies(location.pathname, async (accessToken) => {
         this.configure();
 
-        await fetchUserAccount(userAccountApiService, username);
+        await fetchUserAccount(userAccountApiService, accessToken.preferred_username);
 
         if (accessToken) {
           identifyAuthenticatedUser(accessToken.user_id);
@@ -83,7 +78,6 @@ const withAuthentication = (WrappedComponent) => {
 
   return connect(
     state => ({
-      username: state.authentication.username,
       hasLoadedUserData: state.userAccount.loaded,
     }),
     { fetchUserAccount: _fetchUserAccount },

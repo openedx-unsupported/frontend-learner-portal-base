@@ -133,7 +133,7 @@ Layout.propTypes = {
 
 const ConnectedLayout = connect(state => ({
   avatar: state.userAccount.profileImage.imageUrlMedium,
-  username: state.authentication.username,
+  username: state.userAccount.username,
 }))(Layout);
 
 export default ConnectedLayout;

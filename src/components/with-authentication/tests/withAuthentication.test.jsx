@@ -10,9 +10,6 @@ import withAuthentication from '../withAuthentication';
 
 const mockStore = configureMockStore([thunk]);
 const store = mockStore({
-  authentication: {
-    username: 'edx',
-  },
   userAccount: {
     loaded: true,
   },
