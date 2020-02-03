@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { sendTrackEvent } from '@edx/frontend-analytics';
+import { sendTrackEvent } from '@edx/frontend-platform/analytics';
+import { AppContext } from '@edx/frontend-platform/react';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Dropdown } from '@edx/paragon';
 
-import { AppContext } from '../../app-context';
 import { EmailSettingsModal } from './email-settings';
 
 import './styles/CourseCard.scss';

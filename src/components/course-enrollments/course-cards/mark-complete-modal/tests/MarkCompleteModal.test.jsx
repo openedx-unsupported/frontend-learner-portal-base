@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
+import { AppContext } from '@edx/frontend-platform/react';
 
-import { AppContext } from '../../../../app-context';
 import MarkCompleteModal from '../MarkCompleteModal';
 import * as service from '../data/service';
 

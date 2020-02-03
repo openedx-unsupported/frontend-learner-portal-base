@@ -3,9 +3,8 @@ import { mount } from 'enzyme';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-import * as analytics from '@edx/frontend-analytics';
+import { AppContext } from '@edx/frontend-platform/react';
 
-import { AppContext } from '../../../app-context';
 import BaseCourseCard from '../BaseCourseCard';
 
 const mockStore = configureMockStore([thunk]);
@@ -15,11 +14,13 @@ const store = mockStore({
   },
 });
 
+jest.mock('@edx/frontend-platform/analytics', () => ({
+  sendTrackEvent: jest.fn(),
+}));
+
 describe('<BaseCourseCard />', () => {
   describe('email settings modal', () => {
     let wrapper;
-    analytics.sendTrackEvent = jest.fn();
-
     beforeEach(() => {
       const pageContext = {
         enterpriseName: 'test-enterprise-name',

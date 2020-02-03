@@ -4,11 +4,11 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import { AppContext } from '@edx/frontend-platform/react';
 import { breakpoints } from '@edx/paragon';
 
 import '../../../__mocks__/reactResponsive.mock';
 
-import { AppContext } from '../../app-context';
 import { CourseEnrollments } from '../CourseEnrollments';
 
 const mockStore = configureMockStore([thunk]);

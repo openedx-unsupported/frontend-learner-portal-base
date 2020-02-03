@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { faExclamationTriangle, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MediaQuery from 'react-responsive';
+import { AppContext } from '@edx/frontend-platform/react';
 import { breakpoints, StatusAlert } from '@edx/paragon';
 
-import { AppContext } from '../app-context';
 import { LoadingSpinner } from '../loading-spinner';
 import CourseSection from './CourseSection';
 import {

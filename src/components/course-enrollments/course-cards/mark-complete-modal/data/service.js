@@ -1,6 +1,5 @@
 import qs from 'query-string';
-
-import apiClient from '../../../../../apiClient';
+import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 
 // eslint-disable-next-line import/prefer-default-export
 export const markCourseAsCompleteRequest = (options) => {
@@ -9,5 +8,6 @@ export const markCourseAsCompleteRequest = (options) => {
   if (options) {
     url += `?${qs.stringify(options)}`;
   }
+  const apiClient = getAuthenticatedHttpClient();
   return apiClient.patch(url);
 };

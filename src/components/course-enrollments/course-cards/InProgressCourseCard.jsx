@@ -2,13 +2,13 @@ import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { sendTrackEvent } from '@edx/frontend-analytics';
+import { sendTrackEvent } from '@edx/frontend-platform/analytics';
+import { AppContext } from '@edx/frontend-platform/react';
 
 import BaseCourseCard from './BaseCourseCard';
 import { MarkCompleteModal } from './mark-complete-modal';
 import Notification from './Notification';
 
-import { AppContext } from '../../app-context';
 import {
   updateCourseRunStatus,
   updateIsMarkCourseCompleteSuccess,

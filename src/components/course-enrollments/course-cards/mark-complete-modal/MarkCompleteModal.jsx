@@ -1,11 +1,11 @@
 import React, { createContext, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
+import { camelCaseObject } from '@edx/frontend-platform';
+import { AppContext } from '@edx/frontend-platform/react';
 import { Modal, StatefulButton } from '@edx/paragon';
 
 import ModalBody from './ModalBody';
 import { markCourseAsCompleteRequest } from './data/service';
-import { AppContext } from '../../../app-context';
-import { camelCaseObject } from '../../../../utils';
 
 export const MarkCompleteModalContext = createContext();
 

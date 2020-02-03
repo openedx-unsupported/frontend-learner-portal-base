@@ -1,4 +1,4 @@
-import { camelCaseObject } from '../../../utils';
+import { camelCaseObject } from '@edx/frontend-platform';
 
 import {
   FETCH_COURSE_ENROLLMENTS_REQUEST,
