@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { faExclamationTriangle, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MediaQuery from 'react-responsive';
-import { AppContext } from '@edx/frontend-platform/react';
 import { breakpoints, StatusAlert } from '@edx/paragon';
 
 import { LoadingSpinner } from '../loading-spinner';
@@ -14,6 +13,7 @@ import {
   UpcomingCourseCard,
   CompletedCourseCard,
 } from './course-cards';
+import { AppContext } from '../app-context';
 
 import * as selectors from './data/selectors';
 import * as actions from './data/actions';

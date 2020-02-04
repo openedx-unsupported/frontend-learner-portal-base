@@ -3,9 +3,9 @@ import { mount } from 'enzyme';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-import { AppContext } from '@edx/frontend-platform/react';
 
 import BaseCourseCard from '../BaseCourseCard';
+import { AppContext } from '../../../app-context';
 
 const mockStore = configureMockStore([thunk]);
 const store = mockStore({

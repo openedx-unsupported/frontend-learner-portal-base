@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import SiteHeader from '@edx/frontend-component-site-header';
 import SiteFooter from '@edx/frontend-component-footer';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
-import { AppContext } from '@edx/frontend-platform/react';
 import { connect } from 'react-redux';
 import {
   faFacebookSquare,
@@ -15,6 +14,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import EdXLogo from '../../images/edx-logo.svg';
+import { AppContext } from '../app-context';
 
 import './styles/Layout.scss';
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
-import { AppContext } from '@edx/frontend-platform/react';
 
 import MarkCompleteModal from '../MarkCompleteModal';
 import * as service from '../data/service';
+import { AppContext } from '../../../../app-context';
 
 jest.mock('../data/service');
 
