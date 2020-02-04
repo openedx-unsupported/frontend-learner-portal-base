@@ -10,9 +10,6 @@ getAuthenticatedHttpClient.mockReturnValue(axios);
 axiosMock.onAny().reply(200);
 axios.patch = jest.fn();
 
-const apiClient = getAuthenticatedHttpClient();
-apiClient.patch = jest.fn();
-
 describe('mark complete modal service', () => {
   const url = 'http://localhost:18000/enterprise_learner_portal/api/v1/enterprise_course_enrollments/';
 
