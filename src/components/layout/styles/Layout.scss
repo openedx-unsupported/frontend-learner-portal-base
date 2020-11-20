@@ -1,10 +1,12 @@
-@import "~@edx/paragon/scss/edx/theme.scss";
-@import "~@edx/paragon/scss/edx/fonts.scss"; // Roboto
+@import "@edx/brand/paragon/fonts";
+@import "@edx/brand/paragon/variables";
+@import "@edx/paragon/scss/core/core";
+@import "@edx/brand/paragon/overrides";
 
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 
-@import "~@edx/frontend-component-footer/src/lib/scss/site-footer";
+@import "~@edx/frontend-component-footer/dist/footer";
 @import "~@edx/frontend-component-site-header/src/index";
 
 header {

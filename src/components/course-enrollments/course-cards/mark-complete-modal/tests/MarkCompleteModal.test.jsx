@@ -77,7 +77,7 @@ describe('<MarkCompleteModal />', () => {
       </AppContext.Provider>
     ));
     act(() => {
-      wrapper.find('.modal-footer button.js-close-modal-on-click').hostNodes().simulate('click');
+      wrapper.find('.modal-footer .btn-link').hostNodes().simulate('click');
     });
     expect(mockOnClose).toBeCalledTimes(1);
   });

@@ -14,8 +14,6 @@ import { EmailSettingsModal } from './email-settings';
 import './styles/CourseCard.scss';
 
 class BaseCourseCard extends Component {
-  static contextType = AppContext;
-
   state = {
     modals: {
       emailSettings: {
@@ -149,26 +147,26 @@ class BaseCourseCard extends Component {
     if (menuItems && menuItems.length > 0) {
       return (
         <div className="ml-auto">
-          <Dropdown>
-            <Dropdown.Button className="btn-outline-secondary">
+          <Dropdown.Deprecated>
+            <Dropdown.Deprecated.Button className="btn-outline-secondary">
               <FontAwesomeIcon icon={faCog} />
               <span className="sr-only">
                 course settings for {title}
               </span>
-            </Dropdown.Button>
-            <Dropdown.Menu>
+            </Dropdown.Deprecated.Button>
+            <Dropdown.Deprecated.Menu>
               {menuItems.map(menuItem => (
-                <Dropdown.Item
+                <Dropdown.Deprecated.Item
                   key={menuItem.key}
                   type={menuItem.type}
                   onClick={menuItem.onClick}
                   role="menuitem"
                 >
                   {menuItem.children}
-                </Dropdown.Item>
+                </Dropdown.Deprecated.Item>
             ))}
-            </Dropdown.Menu>
-          </Dropdown>
+            </Dropdown.Deprecated.Menu>
+          </Dropdown.Deprecated>
         </div>
       );
     }
@@ -203,9 +201,9 @@ class BaseCourseCard extends Component {
     const { microMastersTitle } = this.props;
     if (microMastersTitle) {
       return (
-        <p className="font-weight-bold w-75 mb-2">
+        <h3 className="mb-2">
           {microMastersTitle}
-        </p>
+        </h3>
       );
     }
     return null;
@@ -279,9 +277,9 @@ class BaseCourseCard extends Component {
         <div className="d-flex">
           <div className="flex-grow-1 mr-4 mb-3">
             {this.renderMicroMastersTitle()}
-            <h3 className="course-title mb-1">
+            <h4 className="course-title mb-1">
               <a href={linkToCourse}>{title}</a>
-            </h3>
+            </h4>
             {this.renderOrganizationName()}
           </div>
           {this.renderSettingsDropdown(dropdownMenuItems)}
@@ -302,6 +300,8 @@ class BaseCourseCard extends Component {
     );
   }
 }
+
+BaseCourseCard.contextType = AppContext;
 
 BaseCourseCard.propTypes = {
   type: PropTypes.oneOf([

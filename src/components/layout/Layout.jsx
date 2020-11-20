@@ -15,13 +15,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { AppContext } from '../app-context';
 
-import EdXLogo from '../../images/edx-logo.svg';
-
 import './styles/Layout.scss';
 
 class Layout extends Component {
-  static contextType = AppContext;
-
   getUserMenuItems = () => {
     const { header: { userMenu } } = this.context;
     return userMenu || [];
@@ -43,7 +39,7 @@ class Layout extends Component {
             <html lang="en" />
           </Helmet>
           <SiteHeader
-            logo={headerLogo || EdXLogo}
+            logo={headerLogo}
             logoDestination={siteUrl}
             logoAltText={siteName}
             loggedIn={!!username}
@@ -62,7 +58,7 @@ class Layout extends Component {
           </main>
           <SiteFooter
             siteLogo={{
-              src: footerLogo || EdXLogo,
+              src: footerLogo,
               altText: siteName,
               ariaLabel: siteName,
             }}
@@ -144,6 +140,8 @@ class Layout extends Component {
     );
   }
 }
+
+Layout.contextType = AppContext;
 
 Layout.defaultProps = {
   avatar: null,
