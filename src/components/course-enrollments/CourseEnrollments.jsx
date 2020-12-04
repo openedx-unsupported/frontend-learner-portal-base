@@ -19,8 +19,6 @@ import * as selectors from './data/selectors';
 import * as actions from './data/actions';
 
 export class CourseEnrollments extends Component {
-  static contextType = AppContext;
-
   componentDidMount() {
     const {
       pageContext: {
@@ -166,13 +164,15 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
+CourseEnrollments.contextType = AppContext;
+
 CourseEnrollments.propTypes = {
   fetchCourseEnrollments: PropTypes.func.isRequired,
   clearCourseEnrollments: PropTypes.func.isRequired,
   courseRuns: PropTypes.shape({
-    in_progress: PropTypes.array.isRequired,
-    upcoming: PropTypes.array.isRequired,
-    completed: PropTypes.array.isRequired,
+    in_progress: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    upcoming: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    completed: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   }).isRequired,
   isLoading: PropTypes.bool.isRequired,
   sidebarComponent: PropTypes.element.isRequired,

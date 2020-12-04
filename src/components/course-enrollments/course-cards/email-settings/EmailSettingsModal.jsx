@@ -153,7 +153,8 @@ class EmailSettingsModal extends Component {
               complete: 'Saved',
             }}
             disabledStates={this.getDisabledStates()}
-            className="save-email-settings-btn btn-primary"
+            variant="primary"
+            className="save-email-settings-btn"
             state={this.getButtonState()}
             onClick={this.handleSaveButtonClick}
             key="save-email-settings-btn"
