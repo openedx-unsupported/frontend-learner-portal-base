@@ -94,8 +94,5 @@
   },
   "keywords": [],
   "license": "AGPL",
-  "repository": {
-    "type": "git",
-    "url": ""
-  }
+  "repository": "https://github.com/edx/frontend-learner-portal-base"
 }
